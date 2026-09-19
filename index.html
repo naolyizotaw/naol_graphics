@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Naol — Graphic Designer, UI/UX & Cinematographer. Crafting bold event identities, social campaigns, and visual experiences from Ethiopia."/>
+  <title>Naol — Designer &amp; Cinematographer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- Animated Vanta NET 3D Network Background -->
+  <div id="network-background" aria-hidden="true"></div>
+
+  <div class="site-content">
+
+<!-- ══════════════════════════════
+     NAV
+══════════════════════════════ -->
+<header class="nav" role="banner">
+  <div class="nav__pill">
+    <div class="nav__left">
+      <div class="nav__logo" aria-label="Naol">N</div>
+      <ul class="nav__links">
+        <li><a href="#works" class="active">Works</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#capabilities">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <a href="#contact" class="nav__cta">Hire Me</a>
+  </div>
+</header>
+
+<main class="page-wrapper">
+
+  <!-- ══════════════════════════
+       1. HERO (SPLIT-SCREEN VISUAL SHOWCASE)
+  ══════════════════════════ -->
+  <section class="hero-split container" id="home" aria-labelledby="hero-headline">
+
+    <!-- Left Column: Editorial Statement & Actions -->
+    <div class="hero-split__left">
+      
+      <div class="hero-location-tag">
+        <span class="hero-location-dot"></span>
+        <span>Based in Addis Ababa, Ethiopia · Worldwide</span>
+      </div>
+
+      <!-- Standalone Name + Styled Minimized Professions -->
+      <div class="hero-name-wrap">
+        <h1 class="hero-name" id="hero-headline">Naol</h1>
+        <div class="hero-professions" aria-label="Creative Disciplines">
+          <span class="hero-prof-pill">
+            <span class="hero-prof-pill__dot"></span>
+            Graphic Designer
+          </span>
+          <span class="hero-prof-pill">
+            <span class="hero-prof-pill__dot"></span>
+            UI / UX
+          </span>
+          <span class="hero-prof-pill">
+            <span class="hero-prof-pill__dot"></span>
+            Cinematographer
+          </span>
+        </div>
+      </div>
+
+      <p class="hero__sub">
+        Crafting bold event identities, cinematic key art, and intentional digital experiences from concept to final delivery.
+      </p>
+
+      <div class="hero-disc-row">
+        <span class="hero-disc-pill"><span class="material-symbols-outlined">palette</span>Event Branding</span>
+        <span class="hero-disc-pill"><span class="material-symbols-outlined">layers</span>Poster Design</span>
+        <span class="hero-disc-pill"><span class="material-symbols-outlined">movie_edit</span>Film &amp; Color Grade</span>
+      </div>
+
+      <div class="hero__ctas">
+        <a href="#works" class="btn btn--primary">
+          <span>View Selected Works</span>
+          <span class="material-symbols-outlined">arrow_downward</span>
+        </a>
+        <a href="#contact" class="btn btn--ghost">
+          <span class="material-symbols-outlined">mail</span>
+          <span>Get in Touch</span>
+        </a>
+      </div>
+
+      <!-- Quick Proof Stats -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat__num">7+</span>
+          <span class="hero-stat__label">Years Crafting</span>
+        </div>
+        <div class="hero-stat__div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat__num">300 DPI</span>
+          <span class="hero-stat__label">CMYK Master Print</span>
+        </div>
+        <div class="hero-stat__div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat__num">4K · Fidel</span>
+          <span class="hero-stat__label">Motion &amp; Bilingual</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Interactive Fanned Poster Showcase -->
+    <div class="hero-split__right">
+      <div class="showcase-stage">
+        
+        <!-- Ambient radial glow behind the posters -->
+        <div class="showcase-glow" aria-hidden="true"></div>
+
+        <!-- The 3 Fanned Poster Stack -->
+        <div class="showcase-fan" id="hero-showcase-fan" aria-label="Interactive Poster Showcase">
+
+          <!-- Poster 1: Back-Left (Day 1 Series) -->
+          <article class="showcase-card showcase-card--left" data-lightbox="images/DAY1.2.png" data-caption="5-Day Campaign Arc — Day 1 Opener (Teal &amp; Ambient Glow)" tabindex="0">
+            <div class="showcase-card__frame">
+              <img src="images/DAY1.2.png" alt="Day 1 Campaign Poster" loading="eager" />
+              <div class="showcase-card__overlay">
+                <span class="showcase-card__tag">Series Key Art</span>
+                <button class="showcase-card__btn" type="button" aria-label="Zoom poster">
+                  <span class="material-symbols-outlined">zoom_in</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Poster 2: Back-Right (BEZ Flagship) -->
+          <article class="showcase-card showcase-card--right" data-lightbox="images/BEZ2.png" data-caption="BEZ Flagship Event Identity — Cinematic Gold on Obsidian" tabindex="0">
+            <div class="showcase-card__frame">
+              <img src="images/BEZ2.png" alt="BEZ Flagship Poster" loading="eager" />
+              <div class="showcase-card__overlay">
+                <span class="showcase-card__tag">Flagship Event</span>
+                <button class="showcase-card__btn" type="button" aria-label="Zoom poster">
+                  <span class="material-symbols-outlined">zoom_in</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Poster 3: Center-Front (Opening Day Masterpiece) -->
+          <article class="showcase-card showcase-card--center" data-lightbox="images/OPENING DAY.png" data-caption="Opening Day — Typographic Authority &amp; Gold Fidelity" tabindex="0">
+            <div class="showcase-card__frame">
+              <img src="images/OPENING DAY.png" alt="Opening Day Event Poster" loading="eager" />
+              <div class="showcase-card__overlay">
+                <span class="showcase-card__tag">Featured Masterpiece</span>
+                <button class="showcase-card__btn" type="button" aria-label="Zoom poster">
+                  <span class="material-symbols-outlined">zoom_in</span>
+                </button>
+              </div>
+            </div>
+            <!-- Live Caption Ribbon -->
+            <div class="showcase-card__ribbon">
+              <div>
+                <span class="showcase-ribbon__cat">Event Identity</span>
+                <strong class="showcase-ribbon__title">Opening Day — Master Print</strong>
+              </div>
+              <span class="showcase-ribbon__action">
+                <span>View</span>
+                <span class="material-symbols-outlined">fullscreen</span>
+              </span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Floating Interactive Hint -->
+        <div class="showcase-hint">
+          <span class="material-symbols-outlined">touch_app</span>
+          <span>Hover to fan · Click to enlarge</span>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════
+       2. MARQUEE
+  ══════════════════════════ -->
+  <section class="marquee-section container">
+    <p class="marquee-label">Disciplines &amp; Crafts</p>
+    <div class="marquee-track-wrapper">
+      <div class="marquee-track">
+        <span class="marquee-item">Event Branding</span>
+        <span class="marquee-item">Poster Design</span>
+        <span class="marquee-item">Social Media Graphics</span>
+        <span class="marquee-item">UI / UX Design</span>
+        <span class="marquee-item">Cinematography</span>
+        <span class="marquee-item">Visual Identity</span>
+        <span class="marquee-item">Program Design</span>
+        <span class="marquee-item">Typography</span>
+        <span class="marquee-item">Event Branding</span>
+        <span class="marquee-item">Poster Design</span>
+        <span class="marquee-item">Social Media Graphics</span>
+        <span class="marquee-item">UI / UX Design</span>
+        <span class="marquee-item">Cinematography</span>
+        <span class="marquee-item">Visual Identity</span>
+        <span class="marquee-item">Program Design</span>
+        <span class="marquee-item">Typography</span>
+      </div>
+    </div>
+  </section>
+
+    <!-- ══════════════════════════
+       3. CREATIVE PROCESS (CONCEPT TO DELIVERY)
+  ══════════════════════════ -->
+  <section class="process-section container" id="process" aria-labelledby="process-title">
+    <div id="identity" aria-hidden="true" style="position:relative;top:-90px;height:0;overflow:hidden;"></div>
+    
+    <div class="process-header">
+      <div class="process-header__left">
+        <div class="section__eyebrow">
+          <span class="eyebrow-pill">
+            <span class="eyebrow-dot"></span>
+            Workflow &amp; Methodology
+          </span>
+          <span class="section__date">(Phases 01–04)</span>
+        </div>
+        <h2 class="section__title" id="process-title">How I Build.<br/>From Concept to Final Delivery.</h2>
+        <p class="section__sub">
+          Every project follows a disciplined 4-stage creative pipeline. Zero guesswork, radical craft, and transparent milestones from initial brief to multi-medium launch.
+        </p>
+      </div>
+      <div class="process-header__badge">
+        <span class="material-symbols-outlined">verified</span>
+        <span>Average 7–14 Day Turnaround · Direct Collaboration</span>
+      </div>
+    </div>
+
+    <!-- 4-Step Process Grid -->
+    <div class="process-grid">
+
+      <!-- Step 01: Discovery & Creative Direction -->
+      <article class="process-card">
+        <span class="process-card__num">01</span>
+        <div class="process-card__top">
+          <span class="process-pill">Phase 01</span>
+        </div>
+        <div class="process-card__icon-wrap">
+          <span class="material-symbols-outlined">search_insights</span>
+        </div>
+        <h3 class="process-card__title">Discovery &amp; Direction</h3>
+        <p class="process-card__desc">
+          Unpacking your event ethos, audience expectations, and core narrative. We map visual tension, curated moodboards, and chromatic benchmarks before touching pixel one.
+        </p>
+        <ul class="process-card__deliverables">
+          <li>+ Cultural &amp; Visual Research</li>
+          <li>+ Curated Creative Moodboards</li>
+          <li>+ Strategic Aesthetic Direction</li>
+        </ul>
+        <div class="process-card__footer">
+          <span class="process-status-dot"></span>
+          <span class="process-status-text">Milestone: Creative North Star</span>
+        </div>
+      </article>
+
+      <!-- Step 02: Typography & Grid Architecture -->
+      <article class="process-card">
+        <span class="process-card__num">02</span>
+        <div class="process-card__top">
+          <span class="process-pill">Phase 02</span>
+        </div>
+        <div class="process-card__icon-wrap">
+          <span class="material-symbols-outlined">grid_view</span>
+        </div>
+        <h3 class="process-card__title">Grid &amp; Architecture</h3>
+        <p class="process-card__desc">
+          Engineering the mathematical scaffolding of the canvas. Calibrating bilingual Ethiopic Fidel with modern Latin grotesques, establishing 12-column grids, and testing chromatic contrast.
+        </p>
+        <ul class="process-card__deliverables">
+          <li>+ Bilingual Typographic System</li>
+          <li>+ 12-Column Modular Grid</li>
+          <li>+ Calibrated Chromatic Palette</li>
+        </ul>
+        <div class="process-card__footer">
+          <span class="process-status-dot"></span>
+          <span class="process-status-text">Milestone: System Architecture</span>
+        </div>
+      </article>
+
+      <!-- Step 03: Craft, Motion & Iteration -->
+      <article class="process-card">
+        <span class="process-card__num">03</span>
+        <div class="process-card__top">
+          <span class="process-pill">Phase 03</span>
+        </div>
+        <div class="process-card__icon-wrap">
+          <span class="material-symbols-outlined">movie_edit</span>
+        </div>
+        <h3 class="process-card__title">High-Fidelity Craft</h3>
+        <p class="process-card__desc">
+          Rigorous composition across Photoshop, Illustrator, and Premiere. Layering tactile grain, fine optical kerning, subpixel alignment, and cinematic film LUT grading for motion assets.
+        </p>
+        <ul class="process-card__deliverables">
+          <li>+ Master Key Art Posters</li>
+          <li>+ Cinematic Film Color Grade</li>
+          <li>+ Motion Teasers &amp; Intro Loops</li>
+        </ul>
+        <div class="process-card__footer">
+          <span class="process-status-dot"></span>
+          <span class="process-status-text">Milestone: Full Campaign Reveal</span>
+        </div>
+      </article>
+
+      <!-- Step 04: Production & Multi-Platform Launch -->
+      <article class="process-card">
+        <span class="process-card__num">04</span>
+        <div class="process-card__top">
+          <span class="process-pill">Phase 04</span>
+        </div>
+        <div class="process-card__icon-wrap">
+          <span class="material-symbols-outlined">rocket_launch</span>
+        </div>
+        <h3 class="process-card__title">Deployment &amp; Launch</h3>
+        <p class="process-card__desc">
+          Exporting production-ready deliverables calibrated for every touchpoint: large-format 300 DPI CMYK print flyers, 9:16 vertical motion reels, social feeds, and master source archives.
+        </p>
+        <ul class="process-card__deliverables">
+          <li>+ 300 DPI CMYK Print Files</li>
+          <li>+ 9:16 Vertical Reels &amp; Stories</li>
+          <li>+ Master Source Archives (PSD/AI)</li>
+        </ul>
+        <div class="process-card__footer">
+          <span class="process-status-dot"></span>
+          <span class="process-status-text">Milestone: Production Hand-off</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Process Footer Action Tray -->
+    <div class="process-footer">
+      <div class="process-footer__left">
+        <div class="process-footer__icon">
+          <span class="material-symbols-outlined">handshake</span>
+        </div>
+        <div>
+          <div class="process-footer__title">Have a project or campaign in mind?</div>
+          <div class="process-footer__sub">Clear deliverables, transparent timelines, and zero guesswork from day one.</div>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn--primary">
+        <span>Start Your Project</span>
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════
+       4. PORTFOLIO
+  ══════════════════════════ -->
+  <div id="lab" aria-hidden="true" style="height:0;overflow:hidden;position:relative;top:-96px;"></div>
+  <section class="pf-section container" id="works" aria-labelledby="pf-title">
+
+    <div class="pf-head">
+      <div>
+        <div class="section__eyebrow">
+          <span class="section__cat">Portfolio</span>
+          <span class="section__date">(2019–2026)</span>
+        </div>
+        <h2 class="section__title" id="pf-title">Selected Works</h2>
+        <p class="section__sub">Event campaigns, social graphics, program design, and cinematic visuals — pick a category to explore.</p>
+      </div>
+      <span class="pf-hint">
+        <span class="material-symbols-outlined">touch_app</span>
+        Click a category
+      </span>
+    </div>
+
+    <!-- ── Category Selector Cards ── -->
+    <div class="pf-cats">
+
+      <button class="pf-cat pf-cat--cobalt pf-cat--active" data-cat="series" data-title="5-Day Campaign Arc">
+        <span class="pf-cat__bg-num">01</span>
+        <div class="pf-cat__top">
+          <span class="pf-cat__label">Event Series</span>
+          <span class="pf-cat__count">6 pieces</span>
+        </div>
+        <h3 class="pf-cat__title">5-Day Campaign<br/>Arc</h3>
+        <p class="pf-cat__desc">A cohesive graphic campaign across 5 days — dark teal opener to golden finale, with Instagram variants and iterative style evolution.</p>
+        <div class="pf-cat__thumbs">
+          <div class="pf-cat__thumb"><img src="images/DAY1.2.png" alt="Day 1"/></div>
+          <div class="pf-cat__thumb"><img src="images/DAY 2 (2).png" alt="Day 2"/></div>
+          <div class="pf-cat__thumb"><img src="images/DAY3 (3).png" alt="Day 3"/></div>
+        </div>
+      </button>
+
+      <button class="pf-cat pf-cat--tangerine" data-cat="posters" data-title="Bold Event Identities">
+        <span class="pf-cat__bg-num">02</span>
+        <div class="pf-cat__top">
+          <span class="pf-cat__label">Flagship Posters</span>
+          <span class="pf-cat__count">4 pieces</span>
+        </div>
+        <h3 class="pf-cat__title">Bold Event<br/>Identities</h3>
+        <p class="pf-cat__desc">Dark fields, luminous gold, cinematic drama. Posters that command attention and establish the visual authority of every event.</p>
+        <div class="pf-cat__thumbs">
+          <div class="pf-cat__thumb"><img src="images/OPENING DAY.png" alt="Opening Day"/></div>
+          <div class="pf-cat__thumb"><img src="images/2019NEWYR (2).png" alt="New Year 2019"/></div>
+          <div class="pf-cat__thumb"><img src="images/BEZ2.png" alt="BEZ"/></div>
+        </div>
+      </button>
+
+      <button class="pf-cat pf-cat--mint" data-cat="social" data-title="Digital-First Campaigns">
+        <span class="pf-cat__bg-num">03</span>
+        <div class="pf-cat__top">
+          <span class="pf-cat__label">Social &amp; Program</span>
+          <span class="pf-cat__count">4 pieces</span>
+        </div>
+        <h3 class="pf-cat__title">Digital-First<br/>Campaigns</h3>
+        <p class="pf-cat__desc">Event announcements, weekly social posts, and editorial program layouts — built for clarity, impact, and platform-native engagement.</p>
+        <div class="pf-cat__thumbs">
+          <div class="pf-cat__thumb"><img src="images/online fellow monday (2).png" alt="Online Fellowship"/></div>
+          <div class="pf-cat__thumb"><img src="images/TESTIMONY DAY 2.png" alt="Testimony Day 2"/></div>
+          <div class="pf-cat__thumb"><img src="images/monday program  (1).png" alt="Monday Program"/></div>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- ── Poster Rail Panel ── -->
+    <div class="pf-panel" id="pf-panel">
+      <div class="pf-panel__header">
+        <div class="pf-panel__header-left">
+          <span class="pf-panel__eyebrow">Viewing</span>
+          <span class="pf-panel__title" id="pf-panel-title">5-Day Campaign Arc</span>
+        </div>
+        <span class="pf-panel__hint">
+          <span class="material-symbols-outlined" style="font-size:14px;">swipe</span>
+          Scroll &amp; click to enlarge
+        </span>
+      </div>
+      <div class="pf-rail" id="pf-rail">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════
+       6. SERVICES / CAPABILITIES
+  ══════════════════════════ -->
+  <section class="capabilities-section container" id="capabilities">
+
+    <div class="capabilities-header">
+      <span class="capabilities-header__eyebrow">What I Do</span>
+      <h2 class="section__title">Services &amp; Capabilities</h2>
+    </div>
+
+    <div class="capabilities-grid">
+      <div class="cap-card">
+        <div>
+          <span class="cap-card__num">01</span>
+          <h3 class="cap-card__title">Graphic Design</h3>
+          <p class="cap-card__desc">Event posters, social media graphics, program flyers, and print collateral. Bold typography, cohesive colour systems, and platform-aware layouts for every medium.</p>
+        </div>
+        <ul class="cap-card__list">
+          <li>+ Event Campaign Posters</li>
+          <li>+ Social Media Graphics</li>
+          <li>+ Print Program Design</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <div>
+          <span class="cap-card__num">02</span>
+          <h3 class="cap-card__title">UI / UX Design</h3>
+          <p class="cap-card__desc">User interfaces and digital experiences built on solid design systems. From wireframes to polished high-fidelity screens — clarity, hierarchy, and usability first.</p>
+        </div>
+        <ul class="cap-card__list">
+          <li>+ Interface Design</li>
+          <li>+ Design Systems</li>
+          <li>+ Prototyping &amp; Flows</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <div>
+          <span class="cap-card__num">03</span>
+          <h3 class="cap-card__title">Cinematography</h3>
+          <p class="cap-card__desc">Cinematic visual storytelling for events, brand films, and social content. From shot composition to colour grading — a filmmaker's eye applied to every frame.</p>
+        </div>
+        <ul class="cap-card__list">
+          <li>+ Event Coverage</li>
+          <li>+ Brand Films</li>
+          <li>+ Colour Grading</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <div>
+          <span class="cap-card__num">04</span>
+          <h3 class="cap-card__title">Brand Identity</h3>
+          <p class="cap-card__desc">Visual identity systems that communicate who you are. Logo design, colour palettes, typography pairing, and brand guidelines for organisations and events.</p>
+        </div>
+        <ul class="cap-card__list">
+          <li>+ Logo Design</li>
+          <li>+ Visual Language</li>
+          <li>+ Brand Guidelines</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════
+         TOOLS HORIZONTAL MARQUEE
+    ══════════════════════════ -->
+    <div class="tools-marquee-tray" aria-label="Creative Software Stack">
+      <div class="tools-marquee-track">
+        <!-- GROUP 1 -->
+        <div class="tool-icon-card" title="Adobe Photoshop" aria-label="Adobe Photoshop">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M6.5 7h3.8c1.6 0 2.7.9 2.7 2.3 0 1.5-1.1 2.4-2.7 2.4H8.4V17H6.5V7zm1.9 3.2h1.7c.6 0 1-.3 1-.8s-.4-.8-1-.8H8.4v1.6z" fill="currentColor"/>
+            <path d="M13.6 15.2c.4.6 1.1.9 1.9.9 1 0 1.6-.5 1.6-1.3 0-1.7-3.1-1.1-3.1-2.8 0-.9.7-1.5 1.8-1.5.8 0 1.5.4 1.8 1l-1.1.7c-.2-.4-.4-.6-.7-.6-.4 0-.6.2-.6.5 0 1.5 3.1 1 3.1 2.8 0 1.1-.9 1.6-1.9 1.6-1.1 0-1.9-.5-2.3-1.2l1.2-.7z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe Illustrator" aria-label="Adobe Illustrator">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M9.8 7h-1.6L5.5 17h1.9l.7-2.3h3.6l.7 2.3h1.9L11.5 7H9.8zm-1.2 6.1 1.3-4.4 1.3 4.4H8.6z" fill="currentColor"/>
+            <path d="M16.2 7.2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zm-.2 3.3h-1.8V17H16v-6.5z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Figma" aria-label="Figma">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 24c2.21 0 4-1.79 4-4v-4H8c-2.21 0-4 1.79-4 4s1.79 4 4 4z"/>
+            <path d="M4 12c0-2.21 1.79-4 4-4h4v8H8c-2.21 0-4-1.79-4-4z"/>
+            <path d="M4 4c0-2.21 1.79-4 4-4h4v8H8C5.79 8 4 6.21 4 4z"/>
+            <path d="M12 0h4c2.21 0 4 1.79 4 4s-1.79 4-4 4h-4V0z"/>
+            <path d="M20 12c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Affinity" aria-label="Affinity">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12.44 2.21a.75.75 0 0 0-.88 0L.19 10.96a.75.75 0 0 0 .28 1.34l7.15 1.58-5.38 7.37a.75.75 0 0 0 .84 1.15l19.53-7.53a.75.75 0 0 0 .36-.97L12.44 2.21zm-.44 2.26 8.28 9.39-14.7 5.67 4.1-5.61a.75.75 0 0 0-.25-1.12L3.6 11.5 12 4.47z"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe Premiere Pro" aria-label="Adobe Premiere Pro">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M6.5 7h3.8c1.6 0 2.7.9 2.7 2.3 0 1.5-1.1 2.4-2.7 2.4H8.4V17H6.5V7zm1.9 3.2h1.7c.6 0 1-.3 1-.8s-.4-.8-1-.8H8.4v1.6z" fill="currentColor"/>
+            <path d="M13.8 10.5h1.7v1.1c.4-.8 1.1-1.2 2-1.2.3 0 .6.1.8.2l-.6 1.7c-.3-.1-.5-.1-.8-.1-.9 0-1.4.6-1.4 1.6V17h-1.7v-6.5z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe After Effects" aria-label="Adobe After Effects">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M9.5 7H7.9L5.2 17h1.9l.6-2.3h3.4l.6 2.3h1.9L10.9 7H9.5zm-1.3 6.1 1.2-4.4 1.2 4.4H8.2z" fill="currentColor"/>
+            <path d="M15.8 10.3c-1.8 0-2.9 1.2-2.9 3.4 0 2.1 1.1 3.4 3 3.4 1.1 0 2-.4 2.5-1.2l-1.2-.8c-.3.5-.7.7-1.3.7-.9 0-1.4-.5-1.4-1.4h4.7c0-.2.1-.5.1-.7 0-2.1-1.3-3.4-3.5-3.4zm-1.3 2.7c.1-.8.6-1.4 1.4-1.4.8 0 1.3.6 1.4 1.4h-2.8z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe Lightroom" aria-label="Adobe Lightroom">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M6.8 7h1.9v8.2h3.8V17H6.8V7z" fill="currentColor"/>
+            <path d="M13.8 10.5h1.7v1.1c.4-.8 1.1-1.2 2-1.2.3 0 .6.1.8.2l-.6 1.7c-.3-.1-.5-.1-.8-.1-.9 0-1.4.6-1.4 1.6V17h-1.7v-6.5z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Canva" aria-label="Canva">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.1 15.06c-1.37.52-2.88.58-4.25.17-2.61-.78-4.43-3.14-4.48-5.83-.05-2.8 1.69-5.37 4.31-6.32 1.4-.51 2.94-.48 4.31.09.43.18.67.66.54 1.1-.13.43-.61.68-1.05.52-1.07-.44-2.26-.47-3.35-.07-2.05.74-3.41 2.74-3.37 4.93.04 2.1 1.46 3.94 3.5 4.55 1.07.32 2.24.27 3.31-.13.44-.17.92.07 1.06.51.15.44-.08.92-.53 1.08z"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="DaVinci Resolve" aria-label="DaVinci Resolve">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 8.5v3.5l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- GROUP 2 (duplicate for seamless loop) -->
+        <div class="tool-icon-card" title="Adobe Photoshop" aria-label="Adobe Photoshop">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M6.5 7h3.8c1.6 0 2.7.9 2.7 2.3 0 1.5-1.1 2.4-2.7 2.4H8.4V17H6.5V7zm1.9 3.2h1.7c.6 0 1-.3 1-.8s-.4-.8-1-.8H8.4v1.6z" fill="currentColor"/>
+            <path d="M13.6 15.2c.4.6 1.1.9 1.9.9 1 0 1.6-.5 1.6-1.3 0-1.7-3.1-1.1-3.1-2.8 0-.9.7-1.5 1.8-1.5.8 0 1.5.4 1.8 1l-1.1.7c-.2-.4-.4-.6-.7-.6-.4 0-.6.2-.6.5 0 1.5 3.1 1 3.1 2.8 0 1.1-.9 1.6-1.9 1.6-1.1 0-1.9-.5-2.3-1.2l1.2-.7z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe Illustrator" aria-label="Adobe Illustrator">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M9.8 7h-1.6L5.5 17h1.9l.7-2.3h3.6l.7 2.3h1.9L11.5 7H9.8zm-1.2 6.1 1.3-4.4 1.3 4.4H8.6z" fill="currentColor"/>
+            <path d="M16.2 7.2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zm-.2 3.3h-1.8V17H16v-6.5z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Figma" aria-label="Figma">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 24c2.21 0 4-1.79 4-4v-4H8c-2.21 0-4 1.79-4 4s1.79 4 4 4z"/>
+            <path d="M4 12c0-2.21 1.79-4 4-4h4v8H8c-2.21 0-4-1.79-4-4z"/>
+            <path d="M4 4c0-2.21 1.79-4 4-4h4v8H8C5.79 8 4 6.21 4 4z"/>
+            <path d="M12 0h4c2.21 0 4 1.79 4 4s-1.79 4-4 4h-4V0z"/>
+            <path d="M20 12c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Affinity" aria-label="Affinity">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12.44 2.21a.75.75 0 0 0-.88 0L.19 10.96a.75.75 0 0 0 .28 1.34l7.15 1.58-5.38 7.37a.75.75 0 0 0 .84 1.15l19.53-7.53a.75.75 0 0 0 .36-.97L12.44 2.21zm-.44 2.26 8.28 9.39-14.7 5.67 4.1-5.61a.75.75 0 0 0-.25-1.12L3.6 11.5 12 4.47z"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe Premiere Pro" aria-label="Adobe Premiere Pro">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M6.5 7h3.8c1.6 0 2.7.9 2.7 2.3 0 1.5-1.1 2.4-2.7 2.4H8.4V17H6.5V7zm1.9 3.2h1.7c.6 0 1-.3 1-.8s-.4-.8-1-.8H8.4v1.6z" fill="currentColor"/>
+            <path d="M13.8 10.5h1.7v1.1c.4-.8 1.1-1.2 2-1.2.3 0 .6.1.8.2l-.6 1.7c-.3-.1-.5-.1-.8-.1-.9 0-1.4.6-1.4 1.6V17h-1.7v-6.5z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe After Effects" aria-label="Adobe After Effects">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M9.5 7H7.9L5.2 17h1.9l.6-2.3h3.4l.6 2.3h1.9L10.9 7H9.5zm-1.3 6.1 1.2-4.4 1.2 4.4H8.2z" fill="currentColor"/>
+            <path d="M15.8 10.3c-1.8 0-2.9 1.2-2.9 3.4 0 2.1 1.1 3.4 3 3.4 1.1 0 2-.4 2.5-1.2l-1.2-.8c-.3.5-.7.7-1.3.7-.9 0-1.4-.5-1.4-1.4h4.7c0-.2.1-.5.1-.7 0-2.1-1.3-3.4-3.5-3.4zm-1.3 2.7c.1-.8.6-1.4 1.4-1.4.8 0 1.3.6 1.4 1.4h-2.8z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Adobe Lightroom" aria-label="Adobe Lightroom">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <path d="M6.8 7h1.9v8.2h3.8V17H6.8V7z" fill="currentColor"/>
+            <path d="M13.8 10.5h1.7v1.1c.4-.8 1.1-1.2 2-1.2.3 0 .6.1.8.2l-.6 1.7c-.3-.1-.5-.1-.8-.1-.9 0-1.4.6-1.4 1.6V17h-1.7v-6.5z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="Canva" aria-label="Canva">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.1 15.06c-1.37.52-2.88.58-4.25.17-2.61-.78-4.43-3.14-4.48-5.83-.05-2.8 1.69-5.37 4.31-6.32 1.4-.51 2.94-.48 4.31.09.43.18.67.66.54 1.1-.13.43-.61.68-1.05.52-1.07-.44-2.26-.47-3.35-.07-2.05.74-3.41 2.74-3.37 4.93.04 2.1 1.46 3.94 3.5 4.55 1.07.32 2.24.27 3.31-.13.44-.17.92.07 1.06.51.15.44-.08.92-.53 1.08z"/>
+          </svg>
+        </div>
+
+        <div class="tool-icon-card" title="DaVinci Resolve" aria-label="DaVinci Resolve">
+          <svg class="tool-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4.5" stroke="currentColor" stroke-width="1.8" fill="currentColor" fill-opacity="0.08"/>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 8.5v3.5l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════
+       7. CONTACT
+  ══════════════════════════ -->
+  <section class="contact-section container" id="contact" style="max-width:calc(var(--max-w-wide) - 80px);margin-inline:auto;">
+
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact__headline">
+          Got a project?<br/>
+          <span>Let's create</span> something.
+        </h2>
+
+        <p class="contact__sub">
+          Whether it's an event campaign, a brand identity, a UI design, or a film — I'm ready to bring your vision to life. Based in Ethiopia, working worldwide.
+        </p>
+
+        <span class="contact__email-label">Email me directly</span>
+        <button class="email-copy-btn" id="copy-email-btn" type="button">
+          <span class="material-symbols-outlined">mail</span>
+          <span class="email-copy-btn__address" id="email-text">naolyizotaw@gmail.com</span>
+          <span class="email-copy-btn__tooltip" id="copy-tooltip">Click to copy</span>
+        </button>
+
+        <div class="contact__socials">
+          <a href="#" class="contact__social-link contact__social-link--primary">
+            <span>Behance</span>
+            <span class="material-symbols-outlined">arrow_outward</span>
+          </a>
+          <a href="#" class="contact__social-link contact__social-link--secondary">
+            <span>Instagram</span>
+            <span class="material-symbols-outlined">arrow_outward</span>
+          </a>
+          <a href="#" class="contact__social-link contact__social-link--tertiary">
+            <span>LinkedIn</span>
+            <span class="material-symbols-outlined">arrow_outward</span>
+          </a>
+          <a href="#" class="contact__social-link">
+            <span>Dribbble</span>
+            <span class="material-symbols-outlined">arrow_outward</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="planner">
+        <h3 class="planner__title">Project Brief</h3>
+        <div>
+          <span class="planner__label">1. Service Needed</span>
+          <div class="planner__grid-2" id="scope-selector">
+            <button class="opt-btn active" type="button">Graphic Design</button>
+            <button class="opt-btn" type="button">UI / UX Design</button>
+            <button class="opt-btn" type="button">Cinematography</button>
+            <button class="opt-btn" type="button">Brand Identity</button>
+          </div>
+        </div>
+        <div>
+          <span class="planner__label">2. Timeline</span>
+          <div class="planner__grid-3" id="timeline-selector">
+            <button class="opt-btn active" type="button">1–2 Weeks</button>
+            <button class="opt-btn" type="button">1 Month</button>
+            <button class="opt-btn" type="button">Ongoing</button>
+          </div>
+        </div>
+        <div>
+          <span class="planner__label">3. Budget Range</span>
+          <div class="planner__grid-3" id="budget-selector">
+            <button class="opt-btn" type="button">Entry</button>
+            <button class="opt-btn active" type="button">Standard</button>
+            <button class="opt-btn" type="button">Premium</button>
+          </div>
+        </div>
+        <div class="planner__inputs">
+          <input class="planner__input" type="text" placeholder="Your Name"/>
+          <input class="planner__input" type="email" placeholder="Your Email"/>
+          <textarea class="planner__input" placeholder="Brief project description…" rows="3" style="resize:vertical;"></textarea>
+        </div>
+        <button class="planner__submit" id="transmit-btn" type="button">
+          <span>Send Project Brief</span>
+          <span class="material-symbols-outlined">send</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>© 2026 Naol. All rights reserved.</span>
+      <span>Graphic Design · UI/UX · Cinematography · Ethiopia</span>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ══════════════════════════
+     FOOTER
+══════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer__brand">
+        <div class="footer__logo">N</div>
+        <p class="footer__tagline">Graphic designer, UI/UX specialist, and cinematographer — crafting visual experiences with intention.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social"><span class="material-symbols-outlined">photo_camera</span></a>
+          <a href="#" class="footer__social"><span class="material-symbols-outlined">public</span></a>
+          <a href="#" class="footer__social"><span class="material-symbols-outlined">videocam</span></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Portfolio</h4>
+        <ul>
+          <li><a href="#works">All Works</a></li>
+          <li><a href="#lab">Event Series</a></li>
+          <li><a href="#capabilities">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Work Type</h4>
+        <ul>
+          <li><a href="#works">Event Campaigns</a></li>
+          <li><a href="#works">Poster Design</a></li>
+          <li><a href="#works">Social Media</a></li>
+          <li><a href="#works">UI / UX</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#contact">Hire Me</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">© 2026 Naol. Designed &amp; built with care.</p>
+      <div class="footer__legal-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div><!-- /.site-content -->
+
+<!-- THREE.JS (r134) & VANTA NET BACKGROUND -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+<script src="./vanta-net-background.js"></script>
+<script src="./main.js"></script>
+
+<!-- INTERACTIONS -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Copy email
+  const cb=document.getElementById('copy-email-btn'),ct=document.getElementById('copy-tooltip');
+  if(cb&&ct){cb.addEventListener('click',function(){navigator.clipboard.writeText('naolyizotaw@gmail.com').then(function(){ct.textContent='Copied!';ct.style.color='#00865c';setTimeout(function(){ct.textContent='Click to copy';ct.style.color='';},2500);});});}
+
+  // Planner selectors
+  ['scope-selector','timeline-selector','budget-selector'].forEach(function(id){
+    const c=document.getElementById(id);if(!c)return;
+    c.querySelectorAll('.opt-btn').forEach(function(b){b.addEventListener('click',function(){c.querySelectorAll('.opt-btn').forEach(function(x){x.classList.remove('active');});b.classList.add('active');});});
+  });
+
+  // Submit
+  const tx=document.getElementById('transmit-btn');
+  if(tx){tx.addEventListener('click',function(){tx.innerHTML='<span>Sending…</span><span class="material-symbols-outlined" style="animation:spin 1s linear infinite;font-size:16px;">autorenew</span>';tx.disabled=true;setTimeout(function(){tx.innerHTML='<span>Sent! I\'ll be in touch soon 🎉</span><span class="material-symbols-outlined" style="font-size:16px;">check_circle</span>';tx.classList.add('success');},1200);});}
+
+  // ── Lightbox ──────────────────────────────────────
+  const lb      = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lb-img');
+  const lbCap   = document.getElementById('lb-caption');
+  const lbCtr   = document.getElementById('lb-counter');
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev  = document.getElementById('lb-prev');
+  const lbNext  = document.getElementById('lb-next');
+
+  // Mutable so pf-rail can swap the gallery context
+  let lbImages  = [];
+  let lbCurrent = 0;
+
+  function lbOpen(index, imgs) {
+    if (imgs) lbImages = imgs;
+    if (!lbImages.length) return;
+    lbCurrent = ((index % lbImages.length) + lbImages.length) % lbImages.length;
+    const el = lbImages[lbCurrent];
+    lbImg.src = el.dataset ? el.dataset.lightbox || el.src : el.src;
+    lbImg.alt = el.alt || '';
+    lbCap.textContent = el.dataset ? (el.dataset.caption || el.alt || '') : (el.alt || '');
+    lbCtr.textContent = (lbCurrent + 1) + ' / ' + lbImages.length;
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function lbClose_() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  lbImages.forEach(function(el, i) {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', function() { lbOpen(i); });
+  });
+
+  if (lbClose) lbClose.addEventListener('click', lbClose_);
+  if (lb) lb.addEventListener('click', function(e) { if (e.target === lb) lbClose_(); });
+  if (lbPrev) lbPrev.addEventListener('click', function() { lbOpen(lbCurrent - 1); });
+  if (lbNext) lbNext.addEventListener('click', function() { lbOpen(lbCurrent + 1); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lb || !lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape')     lbClose_();
+    if (e.key === 'ArrowLeft')  lbOpen(lbCurrent - 1);
+    if (e.key === 'ArrowRight') lbOpen(lbCurrent + 1);
+  });
+
+  // Wire collage static images into their own lightbox context
+  const collageImgs = Array.from(document.querySelectorAll('.collage-card [data-lightbox]'));
+  collageImgs.forEach(function(el, i) {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', function() { lbOpen(i, collageImgs); });
+  });
+
+  // Wire hero showcase cards into their own lightbox context
+  const showcaseCards = Array.from(document.querySelectorAll('.showcase-card'));
+  showcaseCards.forEach(function(card, i) {
+    card.addEventListener('click', function() { lbOpen(i, showcaseCards); });
+  });
+
+  // ── Portfolio Category System ──────────────────────────────────
+  const PF_DATA = {
+    series: [
+      { src: 'images/DAY1.2.png',          title: 'Day 1 — Series Opener',     meta: 'Event Series · 2024', desc: 'Dark teal and sandy beige. Sets a moody, professional tone — 40% dark coverage with warm typographic accents.' },
+      { src: 'images/DAY 2 (2).png',       title: 'Day 2 — Warm Rise',         meta: 'Event Series · 2024', desc: 'Rich burnt orange and amber. Zero extreme darks or lights — full mid-tone warmth at 70% saturation.' },
+      { src: 'images/DAY3 (3).png',        title: 'Day 3 — Terracotta Peak',   meta: 'Event Series · 2024', desc: 'Deep terracotta and warm coral-orange. Layered photographic textures under bold typography create high visual weight.' },
+      { src: 'images/DAY4.png',            title: 'Day 4 — Visual Peak',       meta: 'Event Series · 2024', desc: 'Sandy-cream with 78% saturation and rust-red accents — the most detailed, warm and luminous piece in the arc.' },
+      { src: 'images/DAY5.png',            title: 'Day 5 — Golden Finale',     meta: 'Event Series · 2024', desc: '79% saturation — highest in the series. Golden yellow and amber signal celebration and culmination of the campaign.' },
+      { src: 'images/day2 - Copy (2).png', title: 'Day 2 — Instagram Edit',    meta: 'Variant · 2024',      desc: 'Instagram-format adaptation at 1080px. Deep amber and forest-olive with 60% saturation for an immersive feed.' },
+    ],
+    posters: [
+      { src: 'images/OPENING DAY.png',     title: 'Opening Day',               meta: 'Flagship Poster · 2024', desc: 'Dark navy field with luminous gold-orange accents. Prestigious, formal — the visual anchor for the entire event identity.' },
+      { src: 'images/2019NEWYR (2).png',   title: 'New Year 2019',             meta: 'Celebration · 2019', desc: 'Forest green and metallic gold. Dark-field design with luminous typography creates a sense of premium occasion and festivity.' },
+      { src: 'images/BEZ2.png',            title: 'BEZ — Cinematic Card',      meta: 'Speaker Feature · 2024', desc: 'Near-total black field with selective warm bronze lighting — ideal for speaker spotlights and event teasers.' },
+      { src: 'images/MONDAY MAY-4.png',    title: 'Monday May 4',              meta: 'Weekly Post · 2024', desc: 'Weekly Monday event social graphic — part of a recurring visual identity with consistent colour and typography.' },
+    ],
+    social: [
+      { src: 'images/online fellow monday (2).png', title: 'Online Fellowship Monday', meta: 'Social Media · 2024', desc: 'High-contrast dark cobalt. Bold white typography and cool-blue accents communicate the virtual nature of the event.' },
+      { src: 'images/TESTIMONY DAY 2.png',          title: 'Testimony Day 2',          meta: 'Announcement · 2024', desc: 'Vivid crimson-pink on white. Flat typographic design communicating emotional urgency and community energy.' },
+      { src: 'images/monday program  (1).png',      title: 'Monday Program',           meta: 'Program Design · 2024', desc: 'Near-white with bold black typography. Coral-orange accent system creates visual rhythm across the structured agenda.' },
+      { src: 'images/MONDAY MAY-4.png',             title: 'Monday May-4 Social',      meta: 'Social Media · 2024', desc: 'Amber and olive colour scheme — part of a recurring weekly event visual identity with consistent style language.' },
+    ],
+  };
+
+  const CAT_TITLES = { series: '5-Day Campaign Arc', posters: 'Bold Event Identities', social: 'Digital-First Campaigns' };
+
+  function renderPfRail(cat) {
+    const rail = document.getElementById('pf-rail');
+    const titleEl = document.getElementById('pf-panel-title');
+    if (!rail) return;
+    var items = PF_DATA[cat] || [];
+    if (titleEl) titleEl.textContent = CAT_TITLES[cat] || '';
+    rail.innerHTML = '';
+    var railImgs = [];
+    items.forEach(function(item, i) {
+      var div = document.createElement('div');
+      div.className = 'pf-item';
+      div.style.animationDelay = (i * 0.07) + 's';
+      div.innerHTML =
+        '<div class="pf-item__img-wrap">' +
+          '<img src="' + item.src + '" alt="' + item.title + '" data-lightbox="' + item.src + '" data-caption="' + item.title + '"/>' +
+        '</div>' +
+        '<div class="pf-item__info">' +
+          '<div class="pf-item__title">' + item.title + '</div>' +
+          '<div class="pf-item__meta">' + item.meta + '</div>' +
+          '<div class="pf-item__desc">' + item.desc + '</div>' +
+        '</div>';
+      rail.appendChild(div);
+      railImgs.push(div.querySelector('img'));
+    });
+    railImgs.forEach(function(img, i) {
+      img.parentElement.addEventListener('click', function() { lbOpen(i, railImgs); });
+    });
+    rail.scrollLeft = 0;
+  }
+
+  // Category card click
+  document.querySelectorAll('.pf-cat').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.pf-cat').forEach(function(b) { b.classList.remove('pf-cat--active'); });
+      btn.classList.add('pf-cat--active');
+      renderPfRail(btn.dataset.cat);
+    });
+  });
+
+  // Rail drag-scroll
+  var pfRail = document.getElementById('pf-rail');
+  if (pfRail) {
+    var dragging = false, startX, scrollStart;
+    pfRail.addEventListener('mousedown', function(e) { dragging = true; startX = e.pageX - pfRail.offsetLeft; scrollStart = pfRail.scrollLeft; pfRail.style.userSelect = 'none'; });
+    pfRail.addEventListener('mouseleave', function() { dragging = false; });
+    pfRail.addEventListener('mouseup', function() { dragging = false; pfRail.style.userSelect = ''; });
+    pfRail.addEventListener('mousemove', function(e) { if (!dragging) return; e.preventDefault(); pfRail.scrollLeft = scrollStart - (e.pageX - pfRail.offsetLeft - startX); });
+  }
+
+  // Render initial category
+  renderPfRail('series');
+
+});
+</script>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Previous image">
+    <span class="material-symbols-outlined" style="font-size:20px;">arrow_back</span>
+  </button>
+  <div class="lightbox__inner">
+    <button class="lightbox__close" id="lb-close" aria-label="Close lightbox">✕</button>
+    <img class="lightbox__img" id="lb-img" src="" alt=""/>
+    <p class="lightbox__caption" id="lb-caption"></p>
+  </div>
+  <button class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Next image">
+    <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
+  </button>
+  <div class="lightbox__counter" id="lb-counter"></div>
+</div>
+
+</body>
+</html>

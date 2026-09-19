@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>Obsidian Atelier — Shader Background</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0e0e10;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="shader-canvas" style="display:block;width:100%;height:100%;position:fixed;inset:0;"></canvas>
+
+<script>
+(function () {
+  const canvas = document.getElementById('shader-canvas');
+
+  function syncSize() {
+    const w = canvas.clientWidth  || window.innerWidth;
+    const h = canvas.clientHeight || window.innerHeight;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+
+  /* ── Vertex Shader ─────────────────────────────────── */
+  const vs = `
+    attribute vec2 a_position;
+    varying vec2 v_uv;
+    void main() {
+      v_uv = a_position * 0.5 + 0.5;
+      gl_Position = vec4(a_position, 0.0, 1.0);
+    }
+  `;
+
+  /* ── Fragment Shader ───────────────────────────────── */
+  const fs = `
+    precision highp float;
+
+    uniform float u_time;
+    uniform vec2  u_resolution;
+    uniform vec2  u_mouse;
+
+    varying vec2 v_uv;
+
+    /* ── Design Palette ──────────────────────────────── */
+    /* Surface void          */ #define COL_VOID       vec3(0.055, 0.055, 0.063)
+    /* Surface base          */ #define COL_BASE       vec3(0.075, 0.075, 0.082)
+    /* Electric Cobalt       */ #define COL_COBALT     vec3(0.176, 0.408, 1.000)
+    /* Neon Tangerine        */ #define COL_TANGERINE  vec3(0.843, 0.231, 0.000)
+    /* Luminous Mint         */ #define COL_MINT       vec3(0.306, 0.871, 0.639)
+    /* Primary (periwinkle)  */ #define COL_PRIMARY    vec3(0.710, 0.769, 1.000)
+    /* Hairline edge         */ #define COL_HAIRLINE   vec3(0.961, 0.961, 0.969)
+
+    /* ── Utilities ───────────────────────────────────── */
+    float hash11(float n) { return fract(sin(n) * 43758.5453); }
+    float hash21(vec2 p)  { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+    vec2  hash22(vec2 p)  {
+      p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
+      return fract(sin(p) * 43758.5453);
+    }
+
+    /* Smooth value noise */
+    float noise(vec2 p) {
+      vec2 i = floor(p);
+      vec2 f = fract(p);
+      vec2 u = f * f * (3.0 - 2.0 * f);
+      float a = hash21(i);
+      float b = hash21(i + vec2(1.0, 0.0));
+      float c = hash21(i + vec2(0.0, 1.0));
+      float d = hash21(i + vec2(1.0, 1.0));
+      return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+    }
+
+    /* Fractional Brownian Motion — 4 octaves */
+    float fbm(vec2 p) {
+      float val  = 0.0;
+      float amp  = 0.5;
+      float freq = 1.0;
+      for (int i = 0; i < 4; i++) {
+        val  += noise(p * freq) * amp;
+        amp  *= 0.5;
+        freq *= 2.0;
+      }
+      return val;
+    }
+
+    /* Rotating matrix — drift nebula clouds */
+    mat2 rot2(float a) {
+      float c = cos(a), s = sin(a);
+      return mat2(c, -s, s, c);
+    }
+
+    /* Voronoi distance field for crystal cell structure */
+    vec2 voronoi(vec2 p) {
+      vec2 ip = floor(p);
+      vec2 fp = fract(p);
+      float minDist = 8.0;
+      vec2  minPoint;
+      for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+          vec2 cell  = vec2(float(x), float(y));
+          vec2 point = hash22(ip + cell);
+          point = 0.5 + 0.5 * sin(u_time * 0.35 + 6.2831 * point);
+          vec2  diff = cell + point - fp;
+          float dist = length(diff);
+          if (dist < minDist) { minDist = dist; minPoint = ip + cell + point; }
+        }
+      }
+      return vec2(minDist, hash21(minPoint));
+    }
+
+    void main() {
+      vec2 uv    = v_uv;
+      float ar   = u_resolution.x / u_resolution.y;
+      vec2  suv  = (v_uv - 0.5) * vec2(ar, 1.0);   /* aspect-corrected */
+
+      /* Mouse parallax — slow drift toward cursor */
+      vec2 mouse = u_mouse / u_resolution;
+      mouse.y    = 1.0 - mouse.y;
+      vec2 mdrift = (mouse - 0.5) * 0.06;
+
+      float t = u_time * 0.18;
+
+      /* ── 1. BASE VOID BACKGROUND ─────────────────── */
+      vec3 col = COL_VOID;
+
+      /* ── 2. DEEP NEBULA CLOUDS (FBM) ─────────────── */
+      vec2 p  = suv * 1.4 + mdrift + vec2(t * 0.12, t * 0.07);
+      p       = rot2(t * 0.08) * p;
+      float f = fbm(p * 1.8);
+      float g = fbm(p * 2.6 + vec2(3.7, 1.2));
+
+      /* Cobalt cloud */
+      vec3 nebulaCobalt = COL_COBALT * smoothstep(0.38, 0.72, f) * 0.14;
+      /* Tangerine wisp (opposing drift) */
+      vec2 p2 = suv * 1.2 - mdrift * 0.8 + vec2(-t * 0.09, t * 0.05);
+      float f2 = fbm(p2 * 2.1 + vec2(5.3, 9.1));
+      vec3 nebulaTan  = COL_TANGERINE * smoothstep(0.42, 0.75, f2) * 0.10;
+      /* Mint aurora streak (top area) */
+      float mintMask = smoothstep(0.0, 0.55, 1.0 - uv.y);
+      vec3 nebulaMint = COL_MINT * smoothstep(0.45, 0.70, g) * 0.07 * mintMask;
+
+      col += nebulaCobalt + nebulaTan + nebulaMint;
+
+      /* ── 3. ARCHITECTURAL GRID ────────────────────── */
+      /* Primary 40-line grid */
+      vec2 grid40 = fract(uv * 40.0);
+      float gLine40 = step(0.985, grid40.x) + step(0.985, grid40.y);
+      col += COL_HAIRLINE * gLine40 * 0.028;
+
+      /* Coarser 8-line structural grid */
+      vec2 grid8  = fract(uv * 8.0);
+      float gLine8 = step(0.980, grid8.x) + step(0.980, grid8.y);
+      col += COL_HAIRLINE * gLine8 * 0.050;
+
+      /* ── 4. VORONOI CRYSTAL CELLS ─────────────────── */
+      vec2 vcell = voronoi(suv * 3.8 + vec2(t * 0.4, t * 0.25));
+      float vEdge = smoothstep(0.04, 0.0, vcell.x); /* thin cell edges */
+      /* Color cell edges based on cell ID */
+      vec3 edgeCol = mix(COL_COBALT, COL_TANGERINE, step(0.5, vcell.y));
+      col += edgeCol * vEdge * 0.18;
+
+      /* Faint cell interior glow */
+      float cellGlow = smoothstep(0.5, 0.0, vcell.x);
+      col += mix(COL_COBALT, COL_PRIMARY, vcell.y) * cellGlow * 0.04;
+
+      /* ── 5. COBALT RADIAL HALO (top-left) ─────────── */
+      vec2 haloPos = vec2(-0.35, 0.45);
+      float haloDist = length(suv - haloPos);
+      float halo = exp(-haloDist * haloDist * 2.2);
+      col += COL_COBALT * halo * 0.22;
+
+      /* ── 6. TANGERINE PULSE (bottom-right) ────────── */
+      vec2 pulsePos = vec2(0.40, -0.42);
+      float pulseDist = length(suv - pulsePos);
+      float pulse = exp(-pulseDist * pulseDist * 2.8);
+      float pulsePow = 0.5 + 0.5 * sin(u_time * 1.1);   /* breathing */
+      col += COL_TANGERINE * pulse * 0.16 * (0.7 + 0.3 * pulsePow);
+
+      /* ── 7. MINT STREAK (centre top) ─────────────── */
+      vec2 mintPos = vec2(0.0, 0.52);
+      float mintDist = length((suv - mintPos) * vec2(0.55, 1.0));
+      float mintGl = exp(-mintDist * mintDist * 3.5);
+      col += COL_MINT * mintGl * 0.10;
+
+      /* ── 8. SCANNING LINE (animated horizontal) ─── */
+      float scanY   = fract(t * 0.6);
+      float scanLine = smoothstep(0.004, 0.0, abs(uv.y - scanY));
+      col += COL_COBALT * scanLine * 0.35;
+
+      /* ── 9. GLITCH SPARKS (random pixels) ────────── */
+      float n = hash21(floor(uv * 28.0) + floor(u_time * 4.0));
+      if (n > 0.997) col += COL_COBALT    * 0.9;
+      if (n > 0.999) col += COL_TANGERINE * 1.2;
+
+      /* ── 10. VIGNETTE ─────────────────────────────── */
+      vec2 vp = uv - 0.5;
+      float vign = smoothstep(0.55, 0.0, length(vp * vec2(0.85, 1.0)));
+      col = mix(COL_VOID * 0.5, col, vign * 0.7 + 0.3);
+
+      /* ── 11. TONEMAPPING & GAMMA ──────────────────── */
+      /* Reinhard */
+      col = col / (col + vec3(1.0));
+      /* Slight contrast lift */
+      col = pow(max(col, 0.0), vec3(0.92));
+      /* Ensure we stay dark — clamp brightness */
+      col = min(col, vec3(0.38, 0.38, 0.44));
+
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+  /* ── Compile & Link ────────────────────────────────── */
+  function compileShader(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+      console.error('Shader compile error:', gl.getShaderInfoLog(s));
+      gl.deleteShader(s);
+      return null;
+    }
+    return s;
+  }
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, compileShader(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, compileShader(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+    console.error('Program link error:', gl.getProgramInfoLog(prog));
+    return;
+  }
+  gl.useProgram(prog);
+
+  /* ── Geometry (full-screen quad) ──────────────────── */
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+
+  const posLoc = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(posLoc);
+  gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+  const uTime  = gl.getUniformLocation(prog, 'u_time');
+  const uRes   = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  /* ── Mouse tracking ────────────────────────────────── */
+  let mx = canvas.width / 2, my = canvas.height / 2;
+  window.addEventListener('mousemove', function (e) {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      mx = ((e.clientX - rect.left) / rect.width)  * canvas.width;
+      my = (1.0 - (e.clientY - rect.top) / rect.height) * canvas.height;
+    }
+  });
+
+  /* ── Render loop ───────────────────────────────────── */
+  function render(ts) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform1f(uTime,  ts * 0.001);
+    gl.uniform2f(uRes,   canvas.width, canvas.height);
+    gl.uniform2f(uMouse, mx, my);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+
+})();
+</script>
+
+</body>
+</html>
