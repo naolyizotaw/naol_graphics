@@ -517,58 +517,13 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 34px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 1023px) {
   .hero-split .hero__ctas {
     justify-content: center;
   }
-}
-
-/* Proof Stats */
-.hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(217, 215, 208, 0.65);
-  width: 100%;
-  max-width: 520px;
-}
-
-@media (max-width: 1023px) {
-  .hero-stats {
-    justify-content: center;
-    margin-inline: auto;
-  }
-}
-
-.hero-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.hero-stat__num {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.hero-stat__label {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-}
-
-.hero-stat__div {
-  width: 1px;
-  height: 28px;
-  background: var(--line);
 }
 
 /* Right Column (Showcase Stage) */
